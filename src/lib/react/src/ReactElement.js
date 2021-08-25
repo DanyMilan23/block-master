@@ -41,7 +41,6 @@ export function createElement(type, props, content) {
       setProperties(prop, props[prop], element)
     );
   }
-  //console.log(Object.keys(this.props));
 
   return element;
 }

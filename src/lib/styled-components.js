@@ -14,6 +14,7 @@ const elements = [
   "input",
   "button",
   "select",
+  "section",
 ];
 
 function buildStyles(strings, dynamicValues, props) {
@@ -21,7 +22,6 @@ function buildStyles(strings, dynamicValues, props) {
   dynamicValues.forEach((value, index) => {
     style[index] += value(props);
   });
-  console.log(style.join(""));
   return style.join("");
 }
 
