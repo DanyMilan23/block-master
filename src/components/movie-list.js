@@ -4,6 +4,7 @@ import Wrapper from "./wrapper.js";
 import Movie from "./movie.js";
 import store from "../store.js";
 import api from "../api.js";
+import { ADD_MOVIES } from "../actions/index.js";
 
 const movieListStyled = styled.section`
   display: grid;
@@ -14,15 +15,36 @@ const movieListStyled = styled.section`
 `;
 
 class MovieList extends Component {
-  state = {};
+  state = { page: 1 };
+
+  getPage = async (page) => {
+    const { results } = await api.moviePage(page);
+    store.dispatch({
+      type: ADD_MOVIES,
+      payload: results,
+    });
+  };
+
+  handleIntersection = (entries) => {
+    if (entries[0].isIntersecting) {
+      this.getPage(this.state.page);
+      this.setState({ page: this.state.page });
+    }
+  };
+
   async componentDidMount() {
-    const page10 = await api.moviePage(10);
-    console.log("page10", page10);
+    store.subscribe(() => {
+      this.setState();
+    });
+    const observer = new IntersectionObserver(this.handleIntersection);
+    observer.observe(window.intersector);
   }
   render() {
     const state = store.getState();
     const movieListId = state.list[state.filter];
     const movieList = state.movieList;
+    console.log(state);
+
     return Wrapper({
       children: movieListStyled({
         children: movieListId.map((id) => new Movie(movieList.get(id))),

@@ -1,10 +1,20 @@
 import { Component, createElement } from "../lib/react/index.js";
 import styled from "../lib/styled-components.js";
 import Select from "./select.js";
+import store from "../store.js";
+import { SET_FILTER } from "../actions/index.js";
 
 class Filters extends Component {
+  handleChange = (event) => {
+    store.dispatch({
+      type: SET_FILTER,
+      payload: event.target.value,
+    });
+  };
+
   render() {
     return Select({
+      onChange: this.handleChange,
       children: [
         createElement(
           "option",
@@ -16,14 +26,14 @@ class Filters extends Component {
         createElement(
           "option",
           {
-            value: "most-valued",
+            value: "mostValued",
           },
           "Más valoradas"
         ),
         createElement(
           "option",
           {
-            value: "least-valued",
+            value: "leastValued",
           },
           "Menos valoradas"
         ),

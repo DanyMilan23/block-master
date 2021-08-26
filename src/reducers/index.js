@@ -1,12 +1,35 @@
 import { ADD_MOVIES, SET_FILTER } from "../actions/index.js";
+import {
+  movieListAsMap,
+  getAllIds,
+  getMostValuedIds,
+  getLeastValuedIds,
+} from "../normalize.js";
 
-const reducer = (state, action) => {
+const reducer = (state, { type, payload }) => {
   let { calories, lessCalories } = state;
-  switch (action.type) {
+  switch (type) {
     case ADD_MOVIES:
-      return state;
+      const movieList = movieListAsMap(payload, state.movieList);
+      const all = getAllIds(payload, state.list.all);
+      const leastValued = getLeastValuedIds(payload, state.list.leastValued);
+      const mostValued = getMostValuedIds(payload, state.list.mostValued);
+      return {
+        ...state,
+        movieList,
+        list: {
+          ...state.list,
+          all,
+          leastValued,
+          mostValued,
+        },
+      };
+
     case SET_FILTER:
-      return state;
+      return {
+        ...state,
+        filter: payload,
+      };
     default:
       return state;
   }
