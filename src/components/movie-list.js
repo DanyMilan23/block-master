@@ -28,7 +28,9 @@ class MovieList extends Component {
   handleIntersection = (entries) => {
     if (entries[0].isIntersecting) {
       this.getPage(this.state.page);
-      this.setState({ page: this.state.page });
+      this.setState({
+        page: this.state.page + 1,
+      });
     }
   };
 
@@ -43,7 +45,6 @@ class MovieList extends Component {
     const state = store.getState();
     const movieListId = state.list[state.filter];
     const movieList = state.movieList;
-    console.log(state);
 
     return Wrapper({
       children: movieListStyled({
