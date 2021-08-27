@@ -1,7 +1,7 @@
-import { Component, createElement } from "../../lib/react/index.js";
-import styled from "../../lib/styled-components.js";
-import store from "../../store.js";
-import { SET_FILTER } from "../../actions/index.js";
+import { Component, createElement } from "../../../lib/react/index.js";
+import styled from "../../../lib/styled-components.js";
+import store from "../../../store.js";
+import { SET_FILTER } from "../../../actions/index.js";
 
 class ElementeMenu extends Component {
   state = { filter: null };

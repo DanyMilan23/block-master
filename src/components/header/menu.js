@@ -1,6 +1,6 @@
 import { Component, createElement } from "../../lib/react/index.js";
 import styled from "../../lib/styled-components.js";
-import ElementMenu from "./elementeMenu.js";
+import ElementMenu from "./menu/elementeMenu.js";
 
 class Menu extends Component {
   state = { changed: null };

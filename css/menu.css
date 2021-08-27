@@ -47,9 +47,9 @@
 .item-menu:hover {
   cursor: pointer;
 }
-.button-cv {
+/* .button-cv {
   visibility: hidden;
-}
+} */
 @media screen and (max-width: 480px) {
   .container-menu {
     display: flex;

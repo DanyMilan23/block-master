@@ -1,10 +1,10 @@
 import { Component } from "../lib/react/index.js";
 import styled from "../lib/styled-components.js";
 import Header from "./header.js";
-import Actions from "./actions.js";
+// import Actions from "./actions.js";
 // import Search from "./search.js";
-import Button from "./button.js";
-import Filters from "./filters.js";
+// import Button from "./button.js";
+// import Filters from "./filters.js";
 import MovieList from "./movie-list.js";
 
 const AppStyled = styled.div``;

@@ -1,4 +1,4 @@
-import styled from "../lib/styled-components.js";
+import styled from "../../../lib/styled-components.js";
 
 export default styled.input`
   border-radius: 8px 0px 0px 8px;
@@ -7,4 +7,5 @@ export default styled.input`
   height: 44px;
   width: 100%;
   padding: 11px 12px;
+  font: var(--body2);
 `;

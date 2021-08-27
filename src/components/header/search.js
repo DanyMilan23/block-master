@@ -1,8 +1,8 @@
 import { Component, createElement } from "../../lib/react/index.js";
 import styled from "../../lib/styled-components.js";
-import Form from "../form.js";
-import Input from "../input.js";
-import Button from "../button.js";
+import Form from "./search/form.js";
+import Input from "./search/input.js";
+import Button from "./search/button.js";
 import store from "../../store.js";
 import { SEARCH_MOVIE, SET_FILTER } from "../../actions/index.js";
 
@@ -28,11 +28,13 @@ class Search extends Component {
       class: "search-form",
       children: [
         new Input({
-          placeholder: "Escribe tu película favorita",
+          placeholder: "Busca tu película favorita",
           name: "title",
           type: "text",
+          class: "input-search",
         }),
         Button({
+          class: "button-search",
           children: createElement("img", {
             src: "../../../images/searchIcon.png",
             height: "20px",

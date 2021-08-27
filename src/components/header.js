@@ -5,7 +5,7 @@ import Menu from "./header/menu.js";
 import Search from "./header/search.js";
 
 const HeaderStyled = styled.header`
-  margin-bottom: 2em;
+  margin-bottom: 24px;
   padding-block: 24px;
   display: flex;
   flex-direction: row;

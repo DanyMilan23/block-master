@@ -6,5 +6,9 @@
   border: 1px solid var(--primary);
   box-sizing: border-box;
 }
-.search-button {
+.button-search:hover {
+  cursor: pointer;
+}
+.input-search::placeholder {
+  color: var(--grey);
 }
