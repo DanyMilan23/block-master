@@ -2,7 +2,7 @@ import { Component } from "../lib/react/index.js";
 import styled from "../lib/styled-components.js";
 import Header from "./header.js";
 import Actions from "./actions.js";
-import Search from "./search.js";
+// import Search from "./search.js";
 import Button from "./button.js";
 import Filters from "./filters.js";
 import MovieList from "./movie-list.js";
@@ -14,13 +14,12 @@ class App extends Component {
     return AppStyled({
       children: [
         new Header(),
-        new Actions({
+        /* new Actions({
           children: [
-            new Search(),
             new Button({ id: "recommended" }, "Películas recomendadas"),
             new Filters(),
           ],
-        }),
+        }), */
         new MovieList(),
       ],
     });

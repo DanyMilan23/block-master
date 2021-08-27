@@ -1,10 +1,10 @@
-import { Component, createElement } from "../lib/react/index.js";
-import styled from "../lib/styled-components.js";
-import Form from "./form.js";
-import Input from "./input.js";
-import Button from "./button.js";
-import store from "../store.js";
-import { SEARCH_MOVIE, SET_FILTER } from "../actions/index.js";
+import { Component, createElement } from "../../lib/react/index.js";
+import styled from "../../lib/styled-components.js";
+import Form from "../form.js";
+import Input from "../input.js";
+import Button from "../button.js";
+import store from "../../store.js";
+import { SEARCH_MOVIE, SET_FILTER } from "../../actions/index.js";
 
 class Search extends Component {
   handleSubmit = (event) => {
@@ -24,15 +24,22 @@ class Search extends Component {
   };
   render() {
     return Form({
-      id: "search-form",
       onSubmit: this.handleSubmit,
+      class: "search-form",
       children: [
         new Input({
           placeholder: "Escribe tu película favorita",
           name: "title",
           type: "text",
         }),
-        Button(null, "Buscar"),
+        Button({
+          children: createElement("img", {
+            src: "../../../images/searchIcon.png",
+            height: "20px",
+            width: "20px",
+            type: "submit",
+          }),
+        }),
       ],
     });
   }

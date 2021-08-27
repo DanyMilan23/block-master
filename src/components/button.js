@@ -1,10 +1,11 @@
 import styled from "../lib/styled-components.js";
 
 export default styled.button`
-  font-size: 1rem;
-  background: #3f69ff;
-  padding: 1em;
-  color: white;
+  background: var(--primary);
   border: none;
-  border-radius: 0.5em;
+  inline-size: auto;
+  right: 80px;
+  padding: 11px 24px;
+  position: absolute;
+  border-radius: 0px 4px 4px 0px;
 `;

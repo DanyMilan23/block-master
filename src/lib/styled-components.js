@@ -3,6 +3,7 @@ import { createElement } from "./react/index.js";
 const styled = {};
 
 const elements = [
+  "a",
   "h1",
   "p",
   "div",
