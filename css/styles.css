@@ -109,3 +109,13 @@ body {
   color: white;
   margin: 0;
 }
+.resultText {
+  font: var(--headline4);
+  color: white;
+}
+.not-result {
+  display: block;
+}
+.not-result.hidden {
+  display: none;
+}

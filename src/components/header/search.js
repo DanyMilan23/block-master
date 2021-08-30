@@ -11,6 +11,7 @@ class Search extends Component {
     event.preventDefault();
     const formData = new FormData(event.target);
     const query = formData.get("title");
+    console.log(query);
     if (query) {
       return store.dispatch({
         type: SEARCH_MOVIE,

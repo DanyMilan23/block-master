@@ -62,6 +62,7 @@ const reducer = (state, { type, payload }) => {
         list: {
           ...state.list,
           search: searchMovie(payload, state.movieList, state.list.all),
+          searchTitle: payload,
         },
       };
     default:

@@ -2,6 +2,7 @@ import { Component } from "../lib/react/index.js";
 import styled from "../lib/styled-components.js";
 import Wrapper from "./wrapper.js";
 import Movie from "./movie.js";
+import NotResult from "./notResult.js";
 import store from "../store.js";
 import api from "../api.js";
 import { ADD_MOVIES } from "../actions/index.js";
@@ -46,11 +47,15 @@ class MovieList extends Component {
     const state = store.getState();
     const movieListId = state.list[state.filter];
     const movieList = state.movieList;
-    console.log(movieList);
     return Wrapper({
-      children: movieListStyled({
-        children: movieListId.map((id) => new Movie(movieList.get(id))),
-      }),
+      children: [
+        new NotResult({
+          title: state.list.searchTitle,
+        }),
+        movieListStyled({
+          children: movieListId.map((id) => new Movie(movieList.get(id))),
+        }),
+      ],
     });
   }
 }
