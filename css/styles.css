@@ -1,6 +1,7 @@
 @import "./menu.css";
 @import "./search.css";
 @import "./carousel.css";
+@import "./spinner.css";
 
 :root {
   --black: #000000;

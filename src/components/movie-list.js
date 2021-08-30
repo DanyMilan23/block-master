@@ -12,6 +12,7 @@ const movieListStyled = styled.section`
   justify-content: center;
   box-sizing: border-box;
   gap: 25px;
+  margin-bottom: 128px;
 `;
 
 class MovieList extends Component {
