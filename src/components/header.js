@@ -9,7 +9,7 @@ const HeaderStyled = styled.header`
   padding-block: 24px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   gap: 48px;
   position: sticky;
 `;
