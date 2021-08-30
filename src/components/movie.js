@@ -12,27 +12,22 @@ class Movie extends Component {
           src: `//image.tmdb.org/t/p/w220_and_h330_face${poster_path}`,
           alt: "",
         }),
-        createElement(
-          "p",
-          {
-            class: "movie-title",
-          },
-          title
-        ),
-        createElement(
-          "p",
-          {
-            class: "movie-id",
-          },
-          id
-        ),
-        createElement(
-          "span",
-          {
-            class: "movie-rate",
-          },
-          vote_average
-        ),
+
+        createElement("span", {
+          class: "movie-rate",
+          children: [
+            createElement("img", {
+              src: "../../images/starIcon.png",
+            }),
+            createElement(
+              "p",
+              {
+                class: "rate",
+              },
+              vote_average
+            ),
+          ],
+        }),
       ],
     });
   }

@@ -8,10 +8,10 @@ import { ADD_MOVIES } from "../actions/index.js";
 
 const movieListStyled = styled.section`
   display: grid;
-  grid-template-columns: repeat(auto-fit, 200px);
+  grid-template-columns: repeat(auto-fit, 220px);
   justify-content: center;
   box-sizing: border-box;
-  gap: 1em;
+  gap: 25px;
 `;
 
 class MovieList extends Component {
