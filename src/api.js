@@ -9,7 +9,9 @@ class API {
     return `${this.baseAPI}discover/movie?api_key=${this.API_KEY}`;
   }
   async moviePage(page) {
-    const response = await fetch(`${this.discoverMovie}&page=${page}`);
+    const response = await fetch(
+      `${this.discoverMovie}&page=${page}&language=es`
+    );
     const data = await response.json();
     return data;
   }

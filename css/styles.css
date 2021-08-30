@@ -1,5 +1,6 @@
 @import "./menu.css";
 @import "./search.css";
+@import "./carousel.css";
 
 :root {
   --black: #000000;

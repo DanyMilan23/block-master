@@ -11,6 +11,7 @@ const HeaderStyled = styled.header`
   flex-direction: row;
   justify-content: flex-start;
   gap: 48px;
+  position: sticky;
 `;
 
 const HeaderLogo = styled.img`

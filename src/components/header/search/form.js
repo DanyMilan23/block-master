@@ -5,4 +5,5 @@ export default styled.form`
   inline-size: 100%;
   display: inline;
   padding: 10px 0px;
+  position: relative;
 `;
