@@ -54,6 +54,10 @@ const reducer = (state, { type, payload }) => {
       return {
         ...state,
         filter: payload,
+        list: {
+          ...state.list,
+          searchTitle: "",
+        },
       };
     case SEARCH_MOVIE:
       return {

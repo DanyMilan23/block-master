@@ -36,21 +36,24 @@ class MovieList extends Component {
     }
   };
 
-  async componentDidMount() {
+  componentDidMount() {
     store.subscribe(() => {
       this.setState();
     });
     const observer = new IntersectionObserver(this.handleIntersection);
     observer.observe(window.intersector);
   }
+
   render() {
     const state = store.getState();
     const movieListId = state.list[state.filter];
     const movieList = state.movieList;
+    console.log(state.list.search);
     return Wrapper({
       children: [
         new NotResult({
           title: state.list.searchTitle,
+          list: state.list.search,
         }),
         movieListStyled({
           children: movieListId.map((id) => new Movie(movieList.get(id))),
