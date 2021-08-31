@@ -17,7 +17,7 @@ class ButtonA extends Component {
     return ButtonStyled({
       children: [
         createElement("img", {
-          src: "../../../images/playIcon.png",
+          src: "images/playIcon.png",
           alt: "Un boton de play",
         }),
         createElement("a", { class: "content-buttonA" }, "VER AHORA"),

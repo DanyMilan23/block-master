@@ -19,7 +19,7 @@ class ButtonB extends Component {
     return ButtonStyled({
       children: [
         createElement("img", {
-          src: "../../../images/plusIcon.png",
+          src: "images/plusIcon.png",
           alt: "Un boton de ,AS",
         }),
         createElement("a", { class: "content-buttonB" }, "VER DESPUES"),

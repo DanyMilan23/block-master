@@ -9,7 +9,6 @@ class Slide extends Component {
       children: [
         createElement("img", {
           class: "image-slide",
-          /*       width: "1200",*/
           height: "310",
           src: this.props.src,
           title: this.props.title,

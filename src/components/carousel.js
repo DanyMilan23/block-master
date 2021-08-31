@@ -33,17 +33,17 @@ class Carousel extends Component {
           children: [
             new Slide({
               id: "slide-1",
-              src: "../../images/mulan.png",
+              src: "images/mulan.png",
               title: "Mulan Movie",
             }),
             new Slide({
               id: "slide-2",
-              src: "../../images/raya.png",
+              src: "images/raya.png",
               title: "Raya",
             }),
             new Slide({
               id: "slide-3",
-              src: "../../images/unidos.png",
+              src: "images/unidos.png",
               title: "Unidos",
             }),
           ],
