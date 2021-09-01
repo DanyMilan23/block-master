@@ -1,4 +1,9 @@
-import { ADD_MOVIES, SET_FILTER, SEARCH_MOVIE } from "../actions/index.js";
+import {
+  ADD_MOVIES,
+  SET_FILTER,
+  SEARCH_MOVIE,
+  SHOW_MODAL,
+} from "../actions/index.js";
 import {
   movieListAsMap,
   getAllIds,
@@ -32,7 +37,6 @@ function searchMovie(query, list, allIds) {
 }
 
 const reducer = (state, { type, payload }) => {
-  let { calories, lessCalories } = state;
   switch (type) {
     case ADD_MOVIES:
       const movieList = movieListAsMap(payload, state.movieList);
@@ -68,6 +72,14 @@ const reducer = (state, { type, payload }) => {
           search: searchMovie(payload, state.movieList, state.list.all),
           searchTitle: payload,
         },
+      };
+    case SHOW_MODAL:
+      console.log("payload", payload);
+      const { modal, modalData } = payload;
+      return {
+        ...state,
+        modal,
+        modalData,
       };
     default:
       return state;

@@ -16,6 +16,8 @@ const initialState = {
     mostValued: getMostValuedIds(movies),
     leastValued: getLeastValuedIds(movies),
   },
+  modal: false,
+  modalData: {},
 };
 
 const store = createStore(reducer, initialState);

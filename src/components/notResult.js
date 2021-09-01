@@ -9,20 +9,16 @@ const BannerDiv = styled.div`
 
 class NotResult extends Component {
   render() {
-    console.log("title", this.props.title);
     var className;
     if (this.props.title === undefined || this.props.title === "") {
       className = "not-result hidden";
     } else if (this.props.list !== undefined) {
       if (this.props.list.length === 0) {
-        console.log("array vacio");
         className = "not-result";
       } else {
         className = "not-result hidden";
       }
     }
-    console.log("className", className);
-    // console.log(this.props.list.length === 0);
     return BannerDiv({
       /* class: `not-result ${
         this.props.title === undefined || this.props.list === undefined

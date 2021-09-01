@@ -13,10 +13,6 @@ class ElementeMenu extends Component {
     this.props.change(this.props.value);
   };
 
-  async componentDidMount() {
-    const filterState = store.getState();
-  }
-
   render() {
     const stateFilter = store.getState();
     const className = `item-menu ${
