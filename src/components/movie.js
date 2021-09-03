@@ -8,6 +8,7 @@ class Movie extends Component {
   state = {
     portal: false,
   };
+
   handleClick = () => {
     store.dispatch({
       type: SHOW_MODAL,
@@ -17,6 +18,13 @@ class Movie extends Component {
       },
     });
   };
+
+  componentDidMount() {
+    store.subscribe(() => {
+      this.setState();
+    });
+  }
+
   render() {
     const { poster_path, title, id, vote_average } = this.props;
     return createElement("article", {

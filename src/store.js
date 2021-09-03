@@ -1,6 +1,7 @@
 import { createStore } from "./redux/index.js";
 import reducer from "./reducers/index.js";
 import movies from "./movies.js";
+import genres from "./genres.js";
 import {
   movieListAsMap,
   getAllIds,
@@ -9,6 +10,7 @@ import {
 } from "./normalize.js";
 
 const initialState = {
+  genres: genres,
   movieList: movieListAsMap(movies),
   filter: "all",
   list: {

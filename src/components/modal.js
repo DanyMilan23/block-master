@@ -1,7 +1,11 @@
 import { Component, createElement } from "../lib/react/index.js";
 import styled from "../lib/styled-components.js";
 import wrapper from "./wrapper.js";
+import CloseButton from "./modal/closeButton.js";
+import MovieBanner from "./modal/movieBanner.js";
+import MovieData from "./modal/movieData.js";
 import store from "../store.js";
+import { SHOW_MODAL } from "../actions/index.js";
 
 const ModalContainerStyled = styled.div`
   background: #0f0e17;
@@ -17,7 +21,7 @@ const ModalContainerStyled = styled.div`
 const ModalStyled = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 40px;
   margin-top: 128px;
@@ -30,18 +34,42 @@ class Modal extends Component {
     });
   }
 
+  handleClick = () => {
+    store.dispatch({
+      type: SHOW_MODAL,
+      payload: {
+        modal: false,
+        modalData: {},
+      },
+    });
+    store.subscribe(() => {
+      this.setState();
+    });
+  };
+
   render() {
     const state = store.getState();
-    console.log("render modal");
-    console.log(state);
-    const className = `modal ${state.modal ? "active" : ""}`;
-    console.log(className);
+    const { modal, modalData } = state;
+    console.log("modal", modal);
+    console.log("modalData", modalData);
+    const className = `modal ${modal ? "active" : ""}`;
     return ModalContainerStyled({
       class: className,
       children: wrapper({
-        children: ModalStyled({
-          children: createElement("h2", {}, "modal"),
-        }),
+        children: [
+          ModalStyled({
+            children: [
+              new MovieBanner({
+                poster_path: modalData.poster_path,
+                vote_average: modalData.vote_average,
+              }),
+              new MovieData({ data: modalData }),
+            ],
+          }),
+          new CloseButton({
+            funcion: this.handleClick,
+          }),
+        ],
       }),
     });
   }

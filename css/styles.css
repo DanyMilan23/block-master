@@ -2,6 +2,7 @@
 @import "./search.css";
 @import "./carousel.css";
 @import "./spinner.css";
+@import "./modal.css";
 
 :root {
   --black: #000000;

@@ -48,7 +48,6 @@ class MovieList extends Component {
     const state = store.getState();
     const movieListId = state.list[state.filter];
     const movieList = state.movieList;
-    console.log("render movielist");
     return Wrapper({
       children: [
         new NotResult({
