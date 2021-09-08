@@ -36,7 +36,7 @@ class Search extends Component {
         Button({
           class: "button-search",
           children: createElement("img", {
-            src: "../../../images/searchIcon.png",
+            src: "images/searchIcon.png",
             height: "20px",
             width: "20px",
             type: "submit",

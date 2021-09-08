@@ -34,7 +34,7 @@ class MovieBanner extends Component {
             class: "movie-modal-rate",
             children: [
               createElement("img", {
-                src: "../../images/starIcon.png",
+                src: "images/starIcon.png",
               }),
               createElement(
                 "p",
