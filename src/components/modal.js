@@ -6,6 +6,7 @@ import MovieBanner from "./modal/movieBanner.js";
 import MovieData from "./modal/movieData.js";
 import store from "../store.js";
 import { SHOW_MODAL } from "../actions/index.js";
+import Spinner from "./spinner.js";
 
 const ModalContainerStyled = styled.div`
   background: #0f0e17;
@@ -28,30 +29,33 @@ const ModalStyled = styled.div`
 `;
 
 class Modal extends Component {
+  handleClick = (event) => {
+    event.preventDefault();
+    console.log("handleclick");
+    store.dispatch({
+      type: SHOW_MODAL,
+      payload: {
+        modal: false,
+        modalData: {},
+        movieDetail: {},
+      },
+    });
+    store.subscribe(() => {
+      console.log("actualizador del modal");
+      this.setState();
+    });
+  };
+
   componentDidMount() {
     store.subscribe(() => {
       this.setState();
     });
   }
 
-  handleClick = () => {
-    store.dispatch({
-      type: SHOW_MODAL,
-      payload: {
-        modal: false,
-        modalData: {},
-      },
-    });
-    store.subscribe(() => {
-      this.setState();
-    });
-  };
-
   render() {
     const state = store.getState();
-    const { modal, modalData } = state;
-    console.log("modal", modal);
-    console.log("modalData", modalData);
+    console.log("render modal");
+    const { modal, modalData, movieDetail } = state;
     const className = `modal ${modal ? "active" : ""}`;
     return ModalContainerStyled({
       class: className,
@@ -63,7 +67,7 @@ class Modal extends Component {
                 poster_path: modalData.poster_path,
                 vote_average: modalData.vote_average,
               }),
-              new MovieData({ data: modalData }),
+              new MovieData(),
             ],
           }),
           new CloseButton({

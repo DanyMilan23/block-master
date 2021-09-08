@@ -16,15 +16,18 @@ class MovieBanner extends Component {
   }
   render() {
     const { poster_path, vote_average } = this.props;
-    console.log(poster_path);
-    console.log(vote_average);
+    const vote = vote_average === undefined ? "0" : vote_average;
+    const poster =
+      poster_path === undefined
+        ? "/fPJWlhXA2VXf4MlQ3JenVsz1iba.jpg"
+        : poster_path;
     return ContainerBanner({
       children: createElement("article", {
-        class: `movie-modal ${vote_average >= 7 ? "recommended" : ""}`,
+        class: `movie-modal ${vote >= 7 ? "recommended" : ""}`,
         children: [
           createElement("img", {
             class: "movie-modal-poster",
-            src: `//image.tmdb.org/t/p/w220_and_h330_face${poster_path}`,
+            src: `//image.tmdb.org/t/p/w220_and_h330_face${poster}`,
             alt: "",
           }),
           createElement("span", {

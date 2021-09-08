@@ -5,7 +5,6 @@ import MovieList from "./movie-list.js";
 import Carousel from "./carousel.js";
 import Spinner from "./spinner.js";
 import Modal from "./modal.js";
-// import NotResult from "./notResult.js";
 import store from "../store.js";
 
 const AppStyled = styled.div``;

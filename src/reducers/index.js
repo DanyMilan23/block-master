@@ -3,6 +3,7 @@ import {
   SET_FILTER,
   SEARCH_MOVIE,
   SHOW_MODAL,
+  GET_MOVIE,
 } from "../actions/index.js";
 import {
   movieListAsMap,
@@ -74,12 +75,12 @@ const reducer = (state, { type, payload }) => {
         },
       };
     case SHOW_MODAL:
-      console.log("payload", payload);
-      const { modal, modalData } = payload;
+      const { modal, modalData, movieDetail } = payload;
       return {
         ...state,
         modal,
-        modalData,
+        modalData: modalData === undefined ? {} : modalData,
+        movieDetail: movieDetail === undefined ? {} : movieDetail,
       };
     default:
       return state;

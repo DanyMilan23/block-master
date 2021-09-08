@@ -20,6 +20,7 @@ const initialState = {
   },
   modal: false,
   modalData: {},
+  movieDetail: {},
 };
 
 const store = createStore(reducer, initialState);
