@@ -12,28 +12,6 @@ const ButtonStyled = styled.a`
 `;
 
 class CloseButton extends Component {
-  /* handleClick = (event) => {
-    event.preventDefault();
-    console.log("handleclick");
-    store.dispatch({
-      type: SHOW_MODAL,
-      payload: {
-        modal: false,
-        modalData: {},
-        movieDetail: {},
-      },
-    });
-    store.subscribe(() => {
-      console.log("actualizador del boton");
-      this.setState();
-    });
-  }; */
-  componentDidMount() {
-    store.subscribe(() => {
-      this.setState();
-    });
-  }
-
   render() {
     return ButtonStyled({
       class: "close-button",

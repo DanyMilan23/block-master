@@ -8,6 +8,7 @@ import { SHOW_MODAL, GET_MOVIE } from "../actions/index.js";
 class Movie extends Component {
   handleClick = async (event) => {
     event.preventDefault();
+    const state = store.getState();
     const movieDetail = await api.searchMovie(this.props.id);
     store.dispatch({
       type: SHOW_MODAL,
@@ -17,6 +18,7 @@ class Movie extends Component {
         movieDetail,
       },
     });
+    this.props.open();
   };
 
   componentDidMount() {
@@ -28,7 +30,7 @@ class Movie extends Component {
     const { poster_path, title, id, vote_average } = this.props;
     return createElement("article", {
       onClick: this.handleClick,
-      class: `movie ${vote_average >= 7 ? "recommended" : ""}`,
+      class: `movie ${vote_average > 7 ? "recommended" : ""}`,
       children: [
         createElement("img", {
           class: "movie-poster",
@@ -39,7 +41,7 @@ class Movie extends Component {
           class: "movie-rate",
           children: [
             createElement("img", {
-              src: "../../images/starIcon.png",
+              src: "images/starIcon.png",
             }),
             createElement(
               "p",

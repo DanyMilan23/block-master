@@ -47,7 +47,7 @@ class MovieList extends Component {
   render() {
     const state = store.getState();
     const movieListId = state.list[state.filter];
-    const movieList = state.movieList;
+    let movieList = state.movieList;
     return Wrapper({
       children: [
         new NotResult({
@@ -55,7 +55,13 @@ class MovieList extends Component {
           list: state.list.search,
         }),
         movieListStyled({
-          children: movieListId.map((id) => new Movie(movieList.get(id))),
+          children: movieListId.map((id) => {
+            const movie = {
+              open: this.props.open,
+              ...movieList.get(id),
+            };
+            return new Movie(movie);
+          }),
         }),
       ],
     });

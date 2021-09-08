@@ -10,6 +10,11 @@ import store from "../store.js";
 const AppStyled = styled.div``;
 
 class App extends Component {
+  state = {
+    modal: false,
+  };
+  closeModal = () => this.setState({ modal: false });
+  openModal = () => this.setState({ modal: true });
   componentDidMount() {
     store.subscribe(() => {
       this.setState();
@@ -19,10 +24,15 @@ class App extends Component {
     const state = store.getState();
     return AppStyled({
       children: [
-        new Modal(),
+        new Modal({
+          close: this.closeModal,
+          statusModal: this.state.modal,
+        }),
         new Header(),
         new Carousel(),
-        new MovieList(),
+        new MovieList({
+          open: this.openModal,
+        }),
         new Spinner(),
       ],
     });

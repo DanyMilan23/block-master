@@ -31,7 +31,6 @@ const ModalStyled = styled.div`
 class Modal extends Component {
   handleClick = (event) => {
     event.preventDefault();
-    console.log("handleclick");
     store.dispatch({
       type: SHOW_MODAL,
       payload: {
@@ -40,10 +39,7 @@ class Modal extends Component {
         movieDetail: {},
       },
     });
-    store.subscribe(() => {
-      console.log("actualizador del modal");
-      this.setState();
-    });
+    this.props.close();
   };
 
   componentDidMount() {
@@ -54,9 +50,8 @@ class Modal extends Component {
 
   render() {
     const state = store.getState();
-    console.log("render modal");
     const { modal, modalData, movieDetail } = state;
-    const className = `modal ${modal ? "active" : ""}`;
+    const className = `modal ${this.props.statusModal ? "active" : ""}`;
     return ModalContainerStyled({
       class: className,
       children: wrapper({
