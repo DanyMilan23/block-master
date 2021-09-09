@@ -2,6 +2,7 @@ import { Component, createElement } from "../../lib/react/index.js";
 import styled from "../../lib/styled-components.js";
 import store from "../../store.js";
 import Description from "./data/description.js";
+import Buttons from "./data/slide-buttons.js";
 
 const DataContainer = styled.div`
   display: flex;
@@ -16,7 +17,7 @@ const DataContainer = styled.div`
 class MovieData extends Component {
   render() {
     return DataContainer({
-      children: new Description(),
+      children: [new Description(), new Buttons()],
     });
   }
 }

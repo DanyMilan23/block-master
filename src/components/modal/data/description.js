@@ -34,21 +34,42 @@ const SummaryStyled = styled.p`
   margin: 0;
 `;
 
-class Description extends Component {
-  /* componentDidMount() {
-    store.subscribe(() => {
-      this.setState();
-    });
-  } */
+const ElipseStyled = styled.div`
+  background: url(images/elipse.png);
+  width: 6px;
+  height: 6px;
+  margin: 8px 0px;
+`;
 
+const Detail = styled.p`
+  font: var(--body1);
+  color: var(--grey);
+  margin: 0;
+`;
+class Description extends Component {
   render() {
     const state = store.getState();
-    const { original_title, overview } = state.movieDetail;
+    console.log(state);
+    const { original_title, overview, genres, release_date, runtime } =
+      state.movieDetail;
+    let genersResult;
+    if (genres !== undefined) {
+      const gen = genres.map((genre) => genre.name);
+      genersResult = gen.join("/");
+    }
     return DescriptionContainer({
       children: [
         TitleStyled({}, original_title),
         SummaryStyled({}, overview),
-        DetailsContainer(),
+        DetailsContainer({
+          children: [
+            Detail({}, new Date(release_date).getFullYear()),
+            ElipseStyled(),
+            Detail({}, genersResult),
+            ElipseStyled(),
+            Detail({}, `${(runtime / 60) >> 0}h${runtime % 60}m`),
+          ],
+        }),
       ],
     });
   }
