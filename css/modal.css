@@ -5,10 +5,6 @@
   position: relative;
   transition: 1s;
   transform: matrix(0.71, -0.41, 1.22, 0.71, 0, 0);
-  /* max-width: 282.45px;
-  width: auto;
-  max-height: 403.49px;
-  height: auto; */
   margin-left: 150px;
 }
 .movie-modal.recommended img {

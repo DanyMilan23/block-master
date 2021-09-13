@@ -3,16 +3,7 @@
   flex-direction: row;
   padding-block: 24px;
 }
-/* .logo {
-  font-style: normal;
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 39px;
-  color: var(--purple);
-}
-.logo:hover {
-  cursor: pointer;
-} */
+
 .list-menu {
   display: flex;
   flex-direction: row;
@@ -50,12 +41,19 @@
 /* .button-cv {
   visibility: hidden;
 } */
+.search-form {
+  display: inline;
+  /* max-inline-size: 533.19px;
+  inline-size: 100%;
+  padding: 10px 0px;
+  position: relative; */
+}
 @media screen and (max-width: 480px) {
   .container-menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: unset;
+    display: none;
+  }
+  .search-form {
+    display: none;
   }
   .logo {
     margin: 0px;

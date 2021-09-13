@@ -69,12 +69,6 @@ body {
   perspective-origin: top;
   animation: recommended 1s forwards;
 }
-
-/* @keyframes recommended {
-  to {
-    transform: perspective(500px) rotate3d(0, -1, 0, 25deg);
-  }
-} */
 .movie.recommended .movie-rate {
   border: 3px solid var(--primary);
   border-left-color: transparent;
@@ -90,7 +84,6 @@ body {
   position: absolute;
   left: 0px;
   top: 24px;
-  /* background: #c4c4c4; */
   color: white;
   padding: 15px 19px;
   display: flex;
@@ -125,4 +118,30 @@ body {
 }
 .modal.active {
   display: block;
+}
+.header-logo {
+  max-width: 106.81px;
+}
+.header-container {
+  padding-block: 24px;
+}
+.menu-phone {
+  display: none;
+}
+.icon-button:hover {
+  cursor: pointer;
+}
+@media screen and (max-width: 480px) {
+  .wrapper-header {
+    padding: 0px 16px 0px 16px;
+  }
+  .header-logo {
+    max-width: 66.75px;
+  }
+  .header-container {
+    padding-block: 8px;
+  }
+  .menu-phone {
+    display: flex;
+  }
 }

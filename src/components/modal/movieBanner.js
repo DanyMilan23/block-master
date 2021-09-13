@@ -3,8 +3,8 @@ import styled from "../../lib/styled-components.js";
 import store from "../../store.js";
 
 const ContainerBanner = styled.div`
-  /* max-width: 282.45px; */
-  /* width: 100%; */
+  max-width: 594px;
+  width: 100%;
   /* border: 1px solid red; */
 `;
 
