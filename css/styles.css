@@ -56,6 +56,10 @@ body {
 .actions > *::after:last-child {
   display: none;
 }
+.movie-list {
+  grid-template-columns: repeat(auto-fit, 220px);
+  gap: 25px;
+}
 .movie {
   position: relative;
   transition: 1s;
@@ -131,8 +135,15 @@ body {
 .icon-button:hover {
   cursor: pointer;
 }
+.search-headline {
+  font: var(--headline1);
+  margin-bottom: 48px;
+}
 @media screen and (max-width: 480px) {
   .wrapper-header {
+    padding: 0px 16px 0px 16px;
+  }
+  .wrapper-list {
     padding: 0px 16px 0px 16px;
   }
   .header-logo {
@@ -143,5 +154,20 @@ body {
   }
   .menu-phone {
     display: flex;
+  }
+  .search-headline {
+    font: var(--body2-bold);
+    margin-bottom: 16px;
+  }
+  .movie-list {
+    grid-template-columns: repeat(auto-fit, 80px);
+    gap: 12px;
+  }
+  .movie-rate {
+    padding: 6px 10px 7px 0px;
+    gap: 2px;
+  }
+  .rate {
+    font: var(--body2-bold);
   }
 }

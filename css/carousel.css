@@ -19,7 +19,8 @@
   /* aspect-ratio: 16/9; */
 }
 .wrapper-container {
-  padding-bottom: 56px;
+  padding: 16px;
+  /* padding-bottom: 16px; */
 }
 .slider-bullet {
   background: #424242;
@@ -48,4 +49,9 @@
 .content-buttonB {
   font: var(--button);
   color: var(--primary);
+}
+@media screen and (max-width: 480px) {
+  .button-container {
+    display: none;
+  }
 }

@@ -9,11 +9,13 @@ import { ADD_MOVIES } from "../actions/index.js";
 
 const movieListStyled = styled.section`
   display: grid;
-  grid-template-columns: repeat(auto-fit, 220px);
   justify-content: center;
   box-sizing: border-box;
-  gap: 25px;
   margin-bottom: 128px;
+`;
+const headLineStyled = styled.h1`
+  color: white;
+  margin-top: 0;
 `;
 
 class MovieList extends Component {
@@ -48,13 +50,21 @@ class MovieList extends Component {
     const state = store.getState();
     const movieListId = state.list[state.filter];
     let movieList = state.movieList;
+    console.log(state);
+    const headLine =
+      state.list.search === undefined
+        ? "Todas las peliculas"
+        : "Resultados de la busqueda";
     return Wrapper({
+      class: "wrapper-list",
       children: [
+        headLineStyled({ class: "search-headline" }, headLine),
         new NotResult({
           title: state.list.searchTitle,
           list: state.list.search,
         }),
         movieListStyled({
+          class: "movie-list",
           children: movieListId.map((id) => {
             const movie = {
               open: this.props.open,
