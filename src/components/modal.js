@@ -21,11 +21,8 @@ const ModalContainerStyled = styled.div`
 `;
 const ModalStyled = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 40px;
-  margin-top: 128px;
 `;
 
 class Modal extends Component {
@@ -57,6 +54,7 @@ class Modal extends Component {
       children: wrapper({
         children: [
           ModalStyled({
+            class: "modal-container",
             children: [
               new MovieBanner({
                 poster_path: modalData.poster_path,

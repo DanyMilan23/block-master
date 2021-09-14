@@ -9,14 +9,13 @@ const DataContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  max-width: 565.96px;
   width: 100%;
-  gap: 40px;
 `;
 
 class MovieData extends Component {
   render() {
     return DataContainer({
+      class: "data-container",
       children: [new Description(), new Buttons()],
     });
   }

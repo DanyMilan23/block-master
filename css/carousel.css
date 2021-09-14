@@ -36,12 +36,6 @@
   gap: 16px;
   flex-direction: row;
 }
-.button-container-modal {
-  /* position: absolute; */
-  display: flex;
-  gap: 16px;
-  flex-direction: row;
-}
 .content-buttonA {
   font: var(--button);
   color: var(--black);

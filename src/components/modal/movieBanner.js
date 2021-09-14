@@ -3,9 +3,7 @@ import styled from "../../lib/styled-components.js";
 import store from "../../store.js";
 
 const ContainerBanner = styled.div`
-  max-width: 594px;
   width: 100%;
-  /* border: 1px solid red; */
 `;
 
 class MovieBanner extends Component {
@@ -22,6 +20,7 @@ class MovieBanner extends Component {
         ? "/fPJWlhXA2VXf4MlQ3JenVsz1iba.jpg"
         : poster_path;
     return ContainerBanner({
+      class: "container-banner",
       children: createElement("article", {
         class: `movie-modal ${vote >= 7 ? "recommended" : ""}`,
         children: [

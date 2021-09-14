@@ -7,8 +7,6 @@ const ButtonStyled = styled.a`
   position: absolute;
   width: 32px;
   height: 32px;
-  right: 83px;
-  top: 136px;
 `;
 
 class CloseButton extends Component {

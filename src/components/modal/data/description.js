@@ -8,6 +8,7 @@ const DescriptionContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
+  width: inherit;
 `;
 
 const DetailsContainer = styled.div`
@@ -15,6 +16,7 @@ const DetailsContainer = styled.div`
   flex-direction: row;
   align-items: flex-start;
   gap: 16px;
+  width: inherit;
 `;
 
 const DetailStyled = styled.p`
@@ -23,13 +25,11 @@ const DetailStyled = styled.p`
 `;
 
 const TitleStyled = styled.h1`
-  font: var(--headline1);
   color: white;
   margin: 0;
 `;
 
 const SummaryStyled = styled.p`
-  font: var(--body1);
   color: white;
   margin: 0;
 `;
@@ -42,7 +42,6 @@ const ElipseStyled = styled.div`
 `;
 
 const Detail = styled.p`
-  font: var(--body1);
   color: var(--grey);
   margin: 0;
 `;
@@ -59,15 +58,21 @@ class Description extends Component {
     }
     return DescriptionContainer({
       children: [
-        TitleStyled({}, original_title),
-        SummaryStyled({}, overview),
+        TitleStyled({ class: "title-description" }, original_title),
+        SummaryStyled({ class: "sumary-description" }, overview),
         DetailsContainer({
           children: [
-            Detail({}, new Date(release_date).getFullYear()),
+            Detail(
+              { class: "detail-description" },
+              new Date(release_date).getFullYear()
+            ),
             ElipseStyled(),
-            Detail({}, genersResult),
+            Detail({ class: "detail-description" }, genersResult),
             ElipseStyled(),
-            Detail({}, `${(runtime / 60) >> 0}h${runtime % 60}m`),
+            Detail(
+              { class: "detail-description" },
+              `${(runtime / 60) >> 0}h${runtime % 60}m`
+            ),
           ],
         }),
       ],

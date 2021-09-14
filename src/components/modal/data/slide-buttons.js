@@ -5,7 +5,7 @@ import ButtonB from "./buttonB.js";
 class SlideButtons extends Component {
   render() {
     return createElement("div", {
-      class: "button-container-modal ",
+      class: "button-container-modal",
       children: [new ButtonA(), new ButtonB()],
     });
   }
