@@ -9,6 +9,9 @@ const MenuStyled = styled.div`
 `;
 
 class MenuPhone extends Component {
+  handleClick = () => {
+    this.props.open();
+  };
   render() {
     return MenuStyled({
       class: "menu-phone",
@@ -20,6 +23,7 @@ class MenuPhone extends Component {
         createElement("img", {
           class: "icon-button",
           src: "images/searchIconYellow.png",
+          onClick: this.handleClick,
         }),
       ],
     });

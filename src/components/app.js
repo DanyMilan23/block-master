@@ -6,15 +6,21 @@ import Carousel from "./carousel.js";
 import Spinner from "./spinner.js";
 import Modal from "./modal.js";
 import store from "../store.js";
+import ModalSearch from "./modal-search.js";
 
-const AppStyled = styled.div``;
+const AppStyled = styled.div`
+  margin: 0;
+`;
 
 class App extends Component {
   state = {
     modal: false,
+    search: false,
   };
-  closeModal = () => this.setState({ modal: false });
-  openModal = () => this.setState({ modal: true });
+  closeModal = () => this.setState({ ...this.state, modal: false });
+  openModal = () => this.setState({ ...this.state, modal: true });
+  closeModalSearch = () => this.setState({ ...this.state, search: false });
+  openModalSearch = () => this.setState({ ...this.state, search: true });
   componentDidMount() {
     store.subscribe(() => {
       this.setState();
@@ -28,7 +34,13 @@ class App extends Component {
           close: this.closeModal,
           statusModal: this.state.modal,
         }),
-        new Header(),
+        new ModalSearch({
+          close: this.closeModalSearch,
+          statusModal: this.state.search,
+        }),
+        new Header({
+          open: this.openModalSearch,
+        }),
         new Carousel(),
         new MovieList({
           open: this.openModal,

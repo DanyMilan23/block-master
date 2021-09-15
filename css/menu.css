@@ -43,10 +43,9 @@
 } */
 .search-form {
   display: inline;
-  /* max-inline-size: 533.19px;
-  inline-size: 100%;
-  padding: 10px 0px;
-  position: relative; */
+}
+.search-form.modal {
+  display: none;
 }
 @media screen and (max-width: 480px) {
   .container-menu {
@@ -63,5 +62,8 @@
   }
   .button-cv {
     visibility: visible;
+  }
+  .search-form.modal {
+    display: inline;
   }
 }

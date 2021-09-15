@@ -48,9 +48,9 @@ class MovieList extends Component {
 
   render() {
     const state = store.getState();
+    // console.log(state);
     const movieListId = state.list[state.filter];
     let movieList = state.movieList;
-    console.log(state);
     const headLine =
       state.list.search === undefined
         ? "Todas las peliculas"

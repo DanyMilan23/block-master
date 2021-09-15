@@ -3,6 +3,7 @@
 @import "./carousel.css";
 @import "./spinner.css";
 @import "./modal.css";
+@import "./modal-search.css";
 
 :root {
   --black: #000000;
@@ -145,6 +146,9 @@ body {
   }
   .wrapper-list {
     padding: 0px 16px 0px 16px;
+  }
+  .wrapper-list.modal {
+    display: none;
   }
   .header-logo {
     max-width: 66.75px;

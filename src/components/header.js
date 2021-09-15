@@ -31,7 +31,9 @@ class Header extends Component {
           }),
           new Menu(),
           new Search(),
-          new MenuPhone(),
+          new MenuPhone({
+            open: this.props.open,
+          }),
         ],
       }),
     });

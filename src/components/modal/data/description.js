@@ -48,7 +48,6 @@ const Detail = styled.p`
 class Description extends Component {
   render() {
     const state = store.getState();
-    console.log(state);
     const { original_title, overview, genres, release_date, runtime } =
       state.movieDetail;
     let genersResult;
